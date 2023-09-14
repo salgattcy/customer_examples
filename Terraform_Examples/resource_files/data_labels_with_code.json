@@ -1,0 +1,50 @@
+{
+    "address" : {
+        "name":"ADDRESS",
+        "description":"Address",
+        "rule_code_file":"./resource_files/data_label_rego/address.rego",
+        "rule_status":"ENABLED"
+    },
+    "test_cnid" : {
+        "name":"TEST_CNID",
+        "description":"Social security number",
+        "rule_code_file":"./resource_files/data_label_rego/test_cnid.rego",
+        "rule_status":"ENABLED"
+    },
+    "age" : {
+        "name":"AGE",
+        "description":"Age",
+        "rule_code_file":"./resource_files/data_label_rego/age.rego",
+        "rule_status":"ENABLED"
+    },
+    "ccn" : {
+        "name":"CCN",
+        "description":"Credit card number",
+        "rule_code_file":"./resource_files/data_label_rego/ccn.rego",
+        "rule_status":"ENABLED"
+    },
+    "email" : {
+        "name":"EMAIL",
+        "description":"Email address",
+        "rule_code_file":"./resource_files/data_label_rego/email.rego",
+        "rule_status":"ENABLED"
+    },
+    "ip_address" : {
+        "name":"IP_ADDRESS",
+        "description":"IP Address",
+        "rule_code_file":"./resource_files/data_label_rego/ip_address.rego",
+        "rule_status":"ENABLED"
+    },
+    "phone" : {
+        "name":"PHONE",
+        "description":"Phone number",
+        "rule_code_file":"./resource_files/data_label_rego/phone.rego",
+        "rule_status":"ENABLED"
+    },
+    "ssn" : {
+        "name":"SSN",
+        "description":"Social security number",
+        "rule_code_file":"./resource_files/data_label_rego/ssn.rego",
+        "rule_status":"ENABLED"
+    }
+}

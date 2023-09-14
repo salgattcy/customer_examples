@@ -1,0 +1,149 @@
+{
+    "aws_redshift": {
+        "labels": [],
+        "name": "AWS-RedShift",
+        "repo_node": {
+            "dynamic": false,
+            "host": "redshift-cluster-1.csktrozhzgrk.us-east-2.redshift.amazonaws.com",
+            "name": "",
+            "port": 5439
+        },
+        "type": "redshift",
+        "identity_provider": "okta.2ba190a8-5574-41b1-8f36-844967bfb9c6",
+        "enable_data_masking": true
+    },
+    "cyral_dev_snowflake": {
+        "labels": [],
+        "name": "Cyral-Dev-Snowflake",
+        "repo_node": {
+            "dynamic": false,
+            "host": "fva95771.snowflakecomputing.com",
+            "name": "",
+            "port": 443
+        },
+        "type": "snowflake",
+        "identity_provider": "okta.2ba190a8-5574-41b1-8f36-844967bfb9c6",
+        "enable_data_masking": true
+    },
+    "dynamo_release_perf_test": {
+        "labels": [],
+        "name": "Dynamo-ReleasePerfTestingResults",
+        "repo_node": {
+            "dynamic": false,
+            "host": "dynamodb.us-east-2.amazonaws.com",
+            "name": "",
+            "port": 443
+        },
+        "type": "dynamodb"
+    },
+    "eng_denodo": {
+        "labels": [],
+        "name": "Eng-Denodo",
+        "repo_node": {
+            "dynamic": false,
+            "host": "172.31.20.65",
+            "name": "",
+            "port": 9996
+        },
+        "type": "denodo",
+        "client_tls":"enable",
+        "identity_provider": "okta.2ba190a8-5574-41b1-8f36-844967bfb9c6"
+    },
+    "oracle_cloud_19c": {
+        "labels": [],
+        "name": "Oracle-Cloud-DB-19c",
+        "repo_node": {
+            "dynamic": false,
+            "host": "adb.us-ashburn-1.oraclecloud.com",
+            "name": "",
+            "port": 1521
+        },
+        "type": "oracle",
+        "repo_tls":"enable",
+        "identity_provider": "okta.2ba190a8-5574-41b1-8f36-844967bfb9c6"
+    },
+    "oracle_cloud_21c": {
+        "labels": [],
+        "name": "Oracle-Cloud-DB-21c",
+        "repo_node": {
+            "dynamic": false,
+            "host": "adwc.uscom-east-1.oraclecloud.com",
+            "name": "",
+            "port": 1521
+        },
+        "type": "oracle",
+        "repo_tls":"enable",
+        "identity_provider": "okta.2ba190a8-5574-41b1-8f36-844967bfb9c6"
+    },
+    "rds_mysql_masking": {
+        "labels": [],
+        "name": "RDS-MySQL-Masking",
+        "repo_node": {
+            "dynamic": false,
+            "host": "mysql-masking.cpzklbsd2coo.us-east-2.rds.amazonaws.com",
+            "name": "",
+            "port": 3306
+        },
+        "type": "mysql",
+        "repo_tls":"enable",
+        "client_tls":"enable",
+        "identity_provider": "okta.2ba190a8-5574-41b1-8f36-844967bfb9c6",
+        "enable_data_masking": true,
+        "enable_dataset_rewrites":true,
+        "block_on_violation":true
+    },
+    "rds_psql_masking": {
+        "labels": [],
+        "name": "RDS-PSQL-Masking",
+        "repo_node": {
+            "dynamic": false,
+            "host": "postgres-masking.cpzklbsd2coo.us-east-2.rds.amazonaws.com",
+            "name": "",
+            "port": 5432
+        },
+        "type": "postgresql",
+        "repo_tls":"enable",
+        "client_tls":"enable",
+        "identity_provider": "okta.2ba190a8-5574-41b1-8f36-844967bfb9c6",
+        "enable_data_masking": true,
+        "enable_dataset_rewrites":true,
+        "block_on_violation":true
+    },
+    "rds_oracle_perf": {
+        "labels": [],
+        "name": "RDS-Oracle-Perf",
+        "repo_node": {
+            "dynamic": false,
+            "host": "oracle-perf.cpzklbsd2coo.us-east-2.rds.amazonaws.com",
+            "name": "",
+            "port": 1521
+        },
+        "type": "oracle"
+    },
+    "engineering_primary_ct78928": {
+        "labels": [],
+        "name": "engineering-primary-ct78928",
+        "repo_node": {
+            "dynamic": false,
+            "host": "ct78928.us-east-2.aws.snowflakecomputing.com",
+            "name": "",
+            "port": 443
+        },
+        "enable_data_masking": true,
+        "type": "snowflake"
+    },
+    "privatelinkuswest2": {
+        "labels": [],
+        "name": "privatelinkuswest2",
+        "repo_node": {
+            "dynamic": false,
+            "host": "cgb10007.snowflakecomputing.com",
+            "name": "",
+            "port": 443
+        },
+        "enable_data_masking": true,
+        "enable_dataset_rewrites":true,
+        "block_on_violation":true,
+        "type": "snowflake"
+    }
+}
