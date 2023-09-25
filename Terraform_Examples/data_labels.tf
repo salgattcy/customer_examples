@@ -22,7 +22,7 @@ resource "cyral_datalabel" "data_labels_with_code" {
   description = try(each.value.description, "")
   classification_rule {
     rule_type   = try(each.value.rule_type, "REGO")
-    rule_code   = jsonencode(each.value.rule_code_file)
+    rule_code   = file(each.value.rule_code_file)
     rule_status = try(each.value.rule_status, "DISABLED")
   }
 }
