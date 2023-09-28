@@ -1,14 +1,19 @@
-package classifier
+package classifier_phone
 
 output := {k: v |
     v := classify(k, input[k])
 }
 
-classify(key, val) = "PHONE" {
-        re_match(
-                `\A((1(-| )?((\([2-9]\d{2}\))|([2-9]\d{2})))|([2-9]\d{2})|(\([2-9]\d{2}\)))(-| )?[2-9]((1[02-9])|([02-9]\d))(-| )?\d{4}\z`,
-                val
+classify(key, val) := "PHONE" {
+    any([
+        contains(lower(key), "phone"),
+        regex.match(
+            `\(?\d{3}\)?[ .-]?\d{3}[ .-]?\d{4}`,
+            val
         )
-} else = "UNLABELED" {
+    ])
+} else := "UNLABELED" {
         true
 }
+
+
