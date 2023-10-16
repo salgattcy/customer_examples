@@ -129,20 +129,6 @@ In addition to running the Open Policy Agent on the command line, you can make i
 
 This Action also assumes that you have all of the rego files in the same directory (customer_examples/Trrraform_Examples/resource_files/data_label_rego). 
 
-Finally, you'll notice that this includes a [Matrix](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs) that will allow you to place the Rego files in multiple directories. If you have Rego tests in multiple directories, then you can update the `package` attribute such as:
-
-```yaml
-...
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package:
-          - customer_examples/Terraform_Examples/resource_files/data_label_rego
-          - another_directory/data_label_rego
-          - test_examples/rego
-...
-```
-
 ```yaml
 name: Test Rego Policies
 
@@ -172,4 +158,18 @@ jobs:
     - name: Run Rego Policy Tests
       run: opa test ${{ matrix.package }} -v
 
+```
+
+Finally, you'll notice that this includes a [Matrix](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs) that will allow you to place the Rego files in multiple directories. If you have Rego tests in multiple directories, then you can update the `package` attribute such as:
+
+```yaml
+...
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - customer_examples/Terraform_Examples/resource_files/data_label_rego
+          - another_directory/data_label_rego
+          - test_examples/rego
+...
 ```
