@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'Terraform_Examples/resource_files/data_label_rego/*'
-      - '.github/workflows/opa.yml'
+      - '.github/workflows/opa.yaml'
 
 jobs:
   Run-OPA-Tests:
