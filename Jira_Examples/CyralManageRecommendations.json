@@ -1,0 +1,321 @@
+{
+    "cloud": true,
+    "rules": [
+        {
+            "id": 10381859,
+            "clientKey": "c054a3a4-1719-3573-9de0-d3e6361b037a",
+            "name": "CyralManageRecommendations",
+            "state": "ENABLED",
+            "description": "",
+            "authorAccountId": "603abc123xyz789402424623c60069a15374",
+            "actor": {
+                "type": "ACCOUNT_ID",
+                "value": "xyz-789"
+            },
+            "created": 1677083068207,
+            "updated": 1688041678980,
+            "trigger": {
+                "id": "281935052",
+                "component": "TRIGGER",
+                "parentId": null,
+                "conditionParentId": null,
+                "schemaVersion": 1,
+                "type": "jira.issue.event.trigger:transitioned",
+                "value": {
+                    "eventKey": "jira:issue_updated",
+                    "issueEvent": "issue_generic",
+                    "fromStatus": [
+                        {
+                            "type": "NAME",
+                            "value": "Open"
+                        },
+                        {
+                            "type": "NAME",
+                            "value": "In Review"
+                        }
+                    ],
+                    "toStatus": [
+                        {
+                            "type": "NAME",
+                            "value": "ACCEPTED"
+                        },
+                        {
+                            "type": "NAME",
+                            "value": "DISMISSED"
+                        }
+                    ]
+                },
+                "children": [],
+                "conditions": [],
+                "connectionId": null
+            },
+            "components": [
+                {
+                    "id": "281935053",
+                    "component": "CONDITION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.jql.condition",
+                    "value": "project = \"Recommendations\" AND issuetype = \"Recommendation\"",
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935054",
+                    "component": "ACTION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.create.variable",
+                    "value": {
+                        "id": "_customsmartvalue_id_1677100575189",
+                        "name": {
+                            "type": "FREE",
+                            "value": "CyralCPClientID"
+                        },
+                        "type": "SMART",
+                        "query": {
+                            "type": "SMART",
+                            "value": "API access key Client ID"
+                        },
+                        "lazy": false
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935055",
+                    "component": "ACTION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.create.variable",
+                    "value": {
+                        "id": "_customsmartvalue_id_1677100589196",
+                        "name": {
+                            "type": "FREE",
+                            "value": "CyralCPSecret"
+                        },
+                        "type": "SMART",
+                        "query": {
+                            "type": "SMART",
+                            "value": "API access key Client Secret"
+                        },
+                        "lazy": false
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935056",
+                    "component": "ACTION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.create.variable",
+                    "value": {
+                        "id": "_customsmartvalue_id_1677100614828",
+                        "name": {
+                            "type": "FREE",
+                            "value": "CyralCPURL"
+                        },
+                        "type": "SMART",
+                        "query": {
+                            "type": "SMART",
+                            "value": "Your Cyral control plane domain"
+                        },
+                        "lazy": false
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935057",
+                    "component": "ACTION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.issue.outgoing.webhook",
+                    "value": {
+                        "url": "https://{{CyralCPURL}}/v1/users/oidc/token?grant_type=client_credentials&client_id={{CyralCPClientID}}&client_secret={{CyralCPSecret}}",
+                        "headers": [
+                            {
+                                "id": "_header_1677082965906",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "headerSecure": false
+                            }
+                        ],
+                        "sendIssue": false,
+                        "contentType": "empty",
+                        "customBody": null,
+                        "method": "POST",
+                        "responseEnabled": true,
+                        "continueOnErrorEnabled": false
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935058",
+                    "component": "ACTION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.create.variable",
+                    "value": {
+                        "id": "_customsmartvalue_id_1677585146788",
+                        "name": {
+                            "type": "FREE",
+                            "value": "CyralCPJWT"
+                        },
+                        "type": "SMART",
+                        "query": {
+                            "type": "SMART",
+                            "value": "{{webResponse.body.access_token}}"
+                        },
+                        "lazy": false
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935059",
+                    "component": "ACTION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.issue.outgoing.webhook",
+                    "value": {
+                        "url": "https://{{CyralCPURL}}/v1/repos/{{issue.Cyral Repository ID}}/datamap/recommendations/{{issue.Cyral Recommendation ID}}/status",
+                        "headers": [
+                            {
+                                "id": "_header_1677083017863",
+                                "name": "Authorization",
+                                "value": "Bearer {{CyralCPJWT}}",
+                                "headerSecure": false
+                            }
+                        ],
+                        "sendIssue": false,
+                        "contentType": "custom",
+                        "customBody": "{\n  \"status\": \"{{issue.status.name}}\"\n}",
+                        "method": "PUT",
+                        "responseEnabled": true,
+                        "continueOnErrorEnabled": false
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935060",
+                    "component": "CONDITION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 3,
+                    "type": "jira.issue.condition",
+                    "value": {
+                        "selectedField": {
+                            "type": "NAME",
+                            "value": "Cyral Access Request ID"
+                        },
+                        "selectedFieldType": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+                        "comparison": "NOT_EMPTY",
+                        "compareValue": null
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935061",
+                    "component": "CONDITION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.issues.related.condition",
+                    "value": {
+                        "relatedType": "jql",
+                        "linkTypes": [],
+                        "operator": "notpresent",
+                        "relatedJql": "project = \"Recommendations\" AND issuetype = \"Recommendation\" AND \"Cyral Access Request ID[Short text]\" ~ {{issue.Cyral Access Request ID}} and status not in (ACCEPTED,DISMISSED)",
+                        "compareJql": "",
+                        "compareValue": 0,
+                        "similarityLimit": 40,
+                        "jql": "project = \"Recommendations\" AND issuetype = \"Recommendation\" AND \"Cyral Access Request ID[Short text]\" ~ {{issue.Cyral Access Request ID}} and status not in (ACCEPTED,DISMISSED)"
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                },
+                {
+                    "id": "281935062",
+                    "component": "ACTION",
+                    "parentId": null,
+                    "conditionParentId": null,
+                    "schemaVersion": 1,
+                    "type": "jira.issue.outgoing.webhook",
+                    "value": {
+                        "url": "https://{{CyralCPURL}}/v1/repos/{{Cyral Repository ID}}/approvals/{{issue.Cyral Access Request ID}}",
+                        "headers": [
+                            {
+                                "id": "_header_1677585003666",
+                                "name": "Authorization",
+                                "value": "Bearer {{CyralCPJWT}}",
+                                "headerSecure": false
+                            }
+                        ],
+                        "sendIssue": false,
+                        "contentType": "empty",
+                        "customBody": null,
+                        "method": "DELETE",
+                        "responseEnabled": true,
+                        "continueOnErrorEnabled": false
+                    },
+                    "children": [],
+                    "conditions": [],
+                    "connectionId": null
+                }
+            ],
+            "canOtherRuleTrigger": false,
+            "notifyOnError": "FIRSTERROR",
+            "projects": [
+                {
+                    "projectId": "10003",
+                    "projectTypeKey": "business"
+                }
+            ],
+            "labels": [],
+            "tags": [
+                {
+                    "id": 35400762,
+                    "tagType": "IS_RULE_UPDATED",
+                    "tagValue": "true"
+                }
+            ],
+            "ruleScope": {
+                "resources": [
+                    "ari:cloud:jira:xyz-789:project/10003"
+                ]
+            },
+            "ruleHome": {
+                "ruleLifeCycleHome": {
+                    "locationARI": "ari:cloud:jira:xyz-789:project/10003"
+                },
+                "ruleBillingHome": {
+                    "locationARI": "ari:cloud:jira-software::site/xyz-789"
+                }
+            },
+            "writeAccessType": "UNRESTRICTED",
+            "collaborators": [],
+            "billingType": "NORMAL"
+        }
+    ]
+}
