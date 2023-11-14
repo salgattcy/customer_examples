@@ -22,7 +22,7 @@ jobs:
       - name: Generate Data Map Diff
         if: github.event_name == 'pull_request'
         shell: bash
-        run: .github/workflows/add_data_map.sh RDS-PSQL-Masking
+        run: .github/workflows/add_data_map.sh $${{ secrets.CYRAL_REPO_NAME }}
         env:
           CYRAL_CONTROL_PLANE: ${{ secrets.CYRAL_CONTROL_PLANE_URL }}
           CYRAL_CLIENT_ID: ${{ secrets.CYRAL_API_CLIENT_ID }}
@@ -31,7 +31,7 @@ jobs:
       - name: Update Cyral Datamap for Repository
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
-        run: .github/workflows/add_data_map.sh RDS-PSQL-Masking apply_changes
+        run: .github/workflows/add_data_map.sh $${{ secrets.CYRAL_REPO_NAME }} apply_changes
         env:
           CYRAL_CONTROL_PLANE: ${{ secrets.CYRAL_CONTROL_PLANE_URL }}
           CYRAL_CLIENT_ID: ${{ secrets.CYRAL_API_CLIENT_ID }}
