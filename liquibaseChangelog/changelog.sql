@@ -5,7 +5,6 @@
 --comment CYRAL_LABEL HASHTABLE_ID rewrite hashtable customer_id
 --comment CYRAL_LABEL JSON_INFO testing orders info
 --comment CYRAL_LABEL MY_ADDRESS public doctors address2
---comment CYRAL_LABEL MY_ADDRESS public patients address1
 --comment CYRAL_LABEL MY_ADDRESS public patients address2
 --comment CYRAL_LABEL MY_CCN public transactions credit_card_number
 --comment CYRAL_LABEL MY_CCN schema table column2
