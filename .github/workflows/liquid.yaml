@@ -1,0 +1,49 @@
+name: Postgres DB CI/DI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+    paths:
+      - 'liquibaseChangelog/*'
+      - '.github/workflows/liquid.yaml'
+      - '.github/workflows/add_data_map.sh'
+
+jobs:
+  test-liquibase-action:
+    runs-on: ubuntu-latest
+    name: Test Liquibase Action
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate Data Map Diff
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: .github/workflows/add_data_map.sh RDS-PSQL-Masking
+        env:
+          CYRAL_CONTROL_PLANE: ${{ secrets.CYRAL_CONTROL_PLANE_URL }}
+          CYRAL_CLIENT_ID: ${{ secrets.CYRAL_API_CLIENT_ID }}
+          CYRAL_CLIENT_SECRET: ${{ secrets.CYRAL_API_CLIENT_SECRET }}
+
+      - name: Update Cyral Datamap for Repository
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: .github/workflows/add_data_map.sh RDS-PSQL-Masking apply_changes
+        env:
+          CYRAL_CONTROL_PLANE: ${{ secrets.CYRAL_CONTROL_PLANE_URL }}
+          CYRAL_CLIENT_ID: ${{ secrets.CYRAL_API_CLIENT_ID }}
+          CYRAL_CLIENT_SECRET: ${{ secrets.CYRAL_API_CLIENT_SECRET }}
+
+      - name: Update database with changes using liquidbase
+        uses: liquibase/liquibase-github-action@v2
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          operation: 'update'
+          classpath: 'POCs/liquidbase/changelogs'
+          changeLogFile: 'changelog.sql'
+          username: ${{ secrets.LIQUID_PG_USER }}
+          password: ${{ secrets.LIQUID_PG_PASS }}
+          url: ${{ secrets.LIQUID_PG_URL }}
