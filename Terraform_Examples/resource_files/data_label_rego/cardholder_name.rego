@@ -1,25 +1,13 @@
 package classifier_cardholder_name
 
-test_dob_pattern {
-    output.cardholder_name == "CARDHOLDER_NAME" with input as {"cardholder_name":"John Doe"}
+output := {k: v |
+    v := classify(k, input[k])
 }
 
-test_dob_pattern {
-    output.cardholder_name == "CARDHOLDER_NAME" with input as {"cardholder_name":"Robert Williams-Brown"}
-}
-
-test_dob_pattern {
-    output.cardholdername == "CARDHOLDER_NAME" with input as {"cardholdername":"Robert Williams-Brown"}
-}
-
-test_dob_pattern {
-    output.cardholderName == "CARDHOLDER_NAME" with input as {"cardholderName":"Robert Williams-Brown"}
-}
-
-test_dob_pattern {
-    output.cardholder_Name == "CARDHOLDER_NAME" with input as {"cardholder_Name":"Robert Williams-Brown"}
-}
-
-test_dob_pattern {
-    output.cardholderName == "CARDHOLDER_NAME" with input as {"cardholderName":"Robert Williams-Brown"}
+classify(key, val) := "CARDHOLDER_NAME" {
+        contains(lower(key), "cardholder")
+        contains(lower(key), "name")
+        regex.match(`^([A-Za-z '-]+[\sA-Za-z '-]+)$`, val)
+} else = "UNLABELED" {
+        true
 }
