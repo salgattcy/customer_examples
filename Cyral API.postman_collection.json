@@ -1,0 +1,2504 @@
+{
+	"info": {
+		"_postman_id": "",
+		"name": "Cyral API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "",
+		"_collection_link": ""
+	},
+	"item": [
+		{
+			"name": "Get Repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/{{cp_api_version}}/repos",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"{{cp_api_version}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sidecar Template - docker-compose",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}/deploy/docker-compose?SidecarId=27hmNSF625P9vo3Xe8xQ1PC0sjp&SidecarName=jemeter-2&logIntegrationType=docker_default&logIntegrationValue=docker_default&metricsIntegrationType=&metricsIntegrationValue=&HCVaultIntegrationID=&clientId=your_api_client_id_here&clientSecret=your_api_client_secret_here",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"path": [
+						"deploy",
+						"docker-compose"
+					],
+					"query": [
+						{
+							"key": "SidecarId",
+							"value": "27hmNSF625P9vo3Xe8xQ1PC0sjp"
+						},
+						{
+							"key": "SidecarName",
+							"value": "jemeter-2"
+						},
+						{
+							"key": "logIntegrationType",
+							"value": "docker_default"
+						},
+						{
+							"key": "logIntegrationValue",
+							"value": "docker_default"
+						},
+						{
+							"key": "metricsIntegrationType",
+							"value": ""
+						},
+						{
+							"key": "metricsIntegrationValue",
+							"value": ""
+						},
+						{
+							"key": "HCVaultIntegrationID",
+							"value": ""
+						},
+						{
+							"key": "clientId",
+							"value": "your_api_client_id_here"
+						},
+						{
+							"key": "clientSecret",
+							"value": "your_api_client_secret_here"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v4.10 Get Sidecar Template - docker-compose",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}/deploy/docker-compose?WiresEnabled=postgresql&TemplateType=cloudformation&TemplateVersion=v4.10.3",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"path": [
+						"deploy",
+						"docker-compose"
+					],
+					"query": [
+						{
+							"key": "LogIntegration",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "MetricsIntegration",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "HCVaultIntegrationID",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "WiresEnabled",
+							"value": "postgresql"
+						},
+						{
+							"key": "TemplateType",
+							"value": "cloudformation"
+						},
+						{
+							"key": "TemplateVersion",
+							"value": "v4.10.3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sidecar Template - sidecar.compose.yaml",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}/deploy/sidecar.compose.yaml?metricsIntegration=&TemplateType=cloudformation&WiresEnabled=dremio,dynamodb,mongodb,mysql,oracle,postgresql,denodo,redshift,snowflake,sqlserver,s3&LogIntegration=cloudformation&TemplateVersion=v4.5.1&InternetProxy&SecretManagerType=aws",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"path": [
+						"deploy",
+						"sidecar.compose.yaml"
+					],
+					"query": [
+						{
+							"key": "SidecarId",
+							"value": "$SIDECAR_ID",
+							"disabled": true
+						},
+						{
+							"key": "SidecarName",
+							"value": "${SidecarName}",
+							"disabled": true
+						},
+						{
+							"key": "logIntegrationType",
+							"value": "docker_default",
+							"disabled": true
+						},
+						{
+							"key": "logIntegrationValue",
+							"value": "docker_default",
+							"disabled": true
+						},
+						{
+							"key": "metricsIntegration",
+							"value": ""
+						},
+						{
+							"key": "metricsIntegrationValue",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "HCVaultIntegrationID",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "clientId",
+							"value": "$SIDECAR_CLIENT_ID",
+							"disabled": true
+						},
+						{
+							"key": "clientSecret",
+							"value": "$SIDECAR_CLIENT_SECRET",
+							"disabled": true
+						},
+						{
+							"key": "TemplateType",
+							"value": "cloudformation"
+						},
+						{
+							"key": "WiresEnabled",
+							"value": "dremio,dynamodb,mongodb,mysql,oracle,postgresql,denodo,redshift,snowflake,sqlserver,s3"
+						},
+						{
+							"key": "LogIntegration",
+							"value": "cloudformation"
+						},
+						{
+							"key": "TemplateVersion",
+							"value": "v4.5.1"
+						},
+						{
+							"key": "InternetProxy",
+							"value": null
+						},
+						{
+							"key": "SecretManagerType",
+							"value": "aws"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Graphql",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetAccessPortal($sessionID: String!) {\n  opaqueToken(sessionID: $sessionID)\n  user {\n    id\n    mappedReposRelationship {\n      ...mappedReposRelationshipFields\n      __typename\n    }\n    ssoGroups {\n      name\n      mappedReposRelationship {\n        ...mappedReposRelationshipFields\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  slackNotificationIntegrations {\n    id\n    name\n    __typename\n  }\n  repos {\n    id\n    name\n    type\n    auth {\n      id\n      identityProvider {\n        name\n        __typename\n      }\n      __typename\n    }\n    repoAccounts {\n      id\n      name\n      __typename\n    }\n    boundSidecarsRelationship {\n      edges {\n        binding {\n          id\n          isSelectedIdentityProviderSidecar\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment mappedReposRelationshipFields on IdentityRepoRelationship {\n  edges {\n    node {\n      id\n      name\n      host\n      type\n      tags\n      ... on MongoDBRepo {\n        replicaSet {   \n          name    \n          __typename         \n        } \n        __typename \n      }          \n      auth {\n        id\n        otpDbuser\n        allowNativeAuth\n        clientTLS\n        identityProvider {\n          name\n          __typename\n        }\n        __typename\n      }\n      boundSidecarsRelationship {\n        edges {\n          binding {\n            id\n            isSelectedIdentityProviderSidecar\n            listener {\n              port\n              __typename\n            }\n            additionalListeners {\n              enabled\n              port\n              __typename\n            }\n            __typename\n          }\n          node {\n            id\n            name\n            endpoint\n            userEndpoint\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    identityMaps {\n      modified\n      accessDuration\n      repoAccount {\n        id\n        name\n        credentials {\n          databaseName\n          ... on AWSIAMRepoAccountCredentials {\n            roleARN\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  __typename\n}",
+						"variables": "{\"sessionID\":\"856125a1-3fdc-430b-ae99-df5bf5ca987b\"}"
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}/graphql",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Global Policies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/policies",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"policies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Local Policies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/instances",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"instances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Local Policy Temaplates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/templates",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Local Policy Templates By Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/templates/{{localPolicyCategory}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"templates",
+						"{{localPolicyCategory}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Local Policy Template In Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Block by Looking IPs Tag\",\n    \"version\": \"v1.0.0\",\n    \"description\": \"Prevent Access via IP list provided by API call.\",\n    \"parametersSchema\": \"{\\n    \\\"$schema\\\": \\\"http://json-schema.org/schema#\\\",\\n    \\\"$id\\\": \\\"http://www.cyral.com/schemas/user-deny-all-paramschema.json\\\",\\n    \\\"type\\\": \\\"object\\\",\\n    \\\"properties\\\": {\\n        \\\"block\\\": {\\n            \\\"type\\\": \\\"boolean\\\",\\n            \\\"default\\\": false\\n        },\\n        \\\"alertSeverity\\\": {\\n            \\\"type\\\": \\\"string\\\",\\n            \\\"enum\\\": [\\n                \\\"low\\\",\\n                \\\"medium\\\",\\n                \\\"high\\\"\\n            ]\\n        }\\n    },\\n    \\\"required\\\": [\\n                \\\"alertSeverity\\\"\\n    ]\\n}\\n\",\n    \"codeBlob\": \"default http_scheme = \\\"https\\\"\\ndefault http_method = \\\"POST\\\"\\ndefault http_url = \\\"https://blah.execute-api.no-here-0.amazonaws.com/test\\\"\\ndefault block = false\\ndefault block_msg = \\\"You are denied\\\"\\ndefault status = \\\"\\\"\\ndefault tags = []\\n\\nhttp_url = data.policyParams.api_url\\napi_url := sprintf(\\\"%s://%s\\\", [http_scheme, http_url])\\n\\nblock = data.policyParams.block\\nresp_body := http.send({\\\"method\\\":http_method, \\\"url\\\":api_url, \\\"body\\\":{\\\"address\\\":input.activityLog.client.host}, \\\"headers\\\":{\\\"x-api-key\\\":\\\"abc-123-xyz-789\\\",\\\"Content-Type\\\": \\\"application/json\\\"}}).body\\n\\ntags = resp_body.data\\nstatus := resp_body.status\\n\\n# isIn checks if an element e is in list l.\\nnotIn(x, l) = false {\\n\\tsome i\\n\\tx == l[i]\\n} else = true\\n\\n# using policy conditions to take care of the inclusions and exclusions for identities\\npolicyConditions = {\\n\\t\\\"activityTypes\\\": [\\\"query\\\",\\\"newConnection\\\"]\\n}\\n\\nnoPolicyExceptionsApply {\\n  status != \\\"ok\\\"\\n}\\n\\nnoPolicyExceptionsApply {\\n\\tstatus == \\\"ok\\\"\\n\\tcount(tags) < 1\\n}\\n\\nnoPolicyExceptionsApply {\\n\\tstatus == \\\"ok\\\"\\n\\tcount(tags) > 0\\n\\tnotIn(\\\"test_project\\\",tags)\\n}\\n\\npolicyApplies {\\n\\tnoPolicyExceptionsApply\\n}\\n\\ndefault policyDecision = {}\\n\\npolicyDecision = {\\\"requestViolation\\\": {\\n\\t\\\"actions\\\": {\\n\\t\\t\\\"alert\\\": true,\\n\\t\\t\\\"block\\\": block,\\n\\t},\\n\\t\\\"cause\\\": block_msg,\\n\\t\\\"severity\\\": data.policyParams.alertSeverity,\\n}} {\\n\\tpolicyApplies\\n}\\n\",\n    \"override\": false,\n    \"tags\": [\n        \"Governance\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/templates/{{localPolicyCategory}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"templates",
+						"{{localPolicyCategory}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Local Policy Template In Category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Block by Looking IPs Tag\",\n    \"version\": \"v1.0.1\",\n    \"description\": \"Prevent Access via IP list provided by API call.\",\n    \"parametersSchema\": \"{\\n    \\\"$schema\\\": \\\"http://json-schema.org/schema#\\\",\\n    \\\"$id\\\": \\\"http://www.cyral.com/schemas/user-deny-all-paramschema.json\\\",\\n    \\\"type\\\": \\\"object\\\",\\n    \\\"properties\\\": {\\n        \\\"block\\\": {\\n            \\\"type\\\": \\\"boolean\\\",\\n            \\\"default\\\": false\\n        },\\n        \\\"alertSeverity\\\": {\\n            \\\"type\\\": \\\"string\\\",\\n            \\\"enum\\\": [\\n                \\\"low\\\",\\n                \\\"medium\\\",\\n                \\\"high\\\"\\n            ]\\n        }\\n    },\\n    \\\"required\\\": [\\n                \\\"alertSeverity\\\"\\n    ]\\n}\\n\",\n    \"codeBlob\": \"default http_scheme = \\\"https\\\"\\ndefault http_method = \\\"POST\\\"\\ndefault http_url = \\\"blah.execute-api.no-here-0.amazonaws.com/test\\\"\\ndefault block = false\\ndefault block_msg = \\\"You are denied by ip tagging\\\"\\ndefault status = \\\"\\\"\\ndefault tags = []\\n\\nhttp_url = data.policyParams.api_url\\napi_url := sprintf(\\\"%s://%s\\\", [http_scheme, http_url])\\n\\nblock = data.policyParams.block\\nresp_body := http.send({\\\"method\\\":http_method, \\\"url\\\":api_url, \\\"body\\\":{\\\"address\\\":input.activityLog.client.host}, \\\"headers\\\":{\\\"x-api-key\\\":\\\"abc-123-xyz-789\\\",\\\"Content-Type\\\": \\\"application/json\\\"}}).body\\n\\ntags = resp_body.data\\nstatus := resp_body.status\\n\\n# isIn checks if an element e is in list l.\\nnotIn(x, l) = false {\\n\\tsome i\\n\\tx == l[i]\\n} else = true\\n\\n# using policy conditions to take care of the inclusions and exclusions for identities\\npolicyConditions = {\\n\\t\\\"activityTypes\\\": [\\\"query\\\",\\\"newConnection\\\"]\\n}\\n\\nnoPolicyExceptionsApply {\\n  status != \\\"ok\\\"\\n}\\n\\nnoPolicyExceptionsApply {\\n\\tstatus == \\\"ok\\\"\\n\\tcount(tags) < 1\\n}\\n\\nnoPolicyExceptionsApply {\\n\\tstatus == \\\"ok\\\"\\n\\tcount(tags) > 0\\n\\tnotIn(\\\"test_project\\\",tags)\\n}\\n\\npolicyApplies {\\n\\tnoPolicyExceptionsApply\\n}\\n\\ndefault policyDecision = {}\\n\\npolicyDecision = {\\\"requestViolation\\\": {\\n\\t\\\"actions\\\": {\\n\\t\\t\\\"alert\\\": true,\\n\\t\\t\\\"block\\\": block,\\n\\t},\\n\\t\\\"cause\\\": block_msg,\\n\\t\\\"severity\\\": data.policyParams.alertSeverity,\\n}} {\\n\\tpolicyApplies\\n}\\n\",\n    \"override\": false,\n    \"tags\": [\n        \"Governance\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/templates/{{localPolicyCategory}}/{{localPolicyTemplateID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"templates",
+						"{{localPolicyCategory}}",
+						"{{localPolicyTemplateID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Local Policy Template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/templates/{{localPolicyCategory}}/{{localPolicyTemplateID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"templates",
+						"{{localPolicyCategory}}",
+						"{{localPolicyTemplateID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Local Policies For Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/instances/{{localPolicyCategory}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"instances",
+						"{{localPolicyCategory}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Local Policy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/instances/{{localPolicyCategory}}/{{localPolicyID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"instances",
+						"{{localPolicyCategory}}",
+						"{{localPolicyID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Specific Local Policy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"instance\": {\n    \"name\": \"allow-by-ec2-tag\",\n    \"description\": \"Policy that will block EC2 clients that are not tagged properly in AWS\",\n    \"templateId\": \"abc123\",\n    \"parameters\": \"{\\\"policyExceptions\\\" : {\\\"my_ro_user\\\":{\\\"schemas\\\":[{\\\"end_time\\\":\\\"1986852617410889176\\\",\\\"name\\\":\\\"testing.*\\\"},{\\\"name\\\":\\\"new_testing.*\\\"}]}},\\\"alertSeverity\\\":\\\"high\\\",\\\"block\\\":false}\",\n    \"enabled\": true,\n    \"scope\": {\n        \"repoIds\": [\n            \"abc123\"\n        ]\n    },\n    \"tags\": [\n        \"Governance\"\n    ],\n    \"lastUpdated\": {\n        \"actor\": \"no/default/xyz789\",\n        \"actorType\": \"API_CLIENT\",\n        \"timestamp\": \"2023-08-09T12:56:24.860625666Z\"\n    },\n    \"created\": {\n        \"actor\": \"no/default/xyz789\",\n        \"actorType\": \"API_CLIENT\",\n        \"timestamp\": \"2023-08-08T19:48:29.118066334Z\"\n    }\n}            }\n            ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/instances/{{localPolicyCategory}}/{{localPolicyID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"instances",
+						"{{localPolicyCategory}}",
+						"{{localPolicyID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Specific Local Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"instance\": {\n        \"name\": \"allow-by-ec2-tag\",\n        \"description\": \"Policy that will block EC2 clients that are not tagged properly in AWS\",\n        \"templateId\": \"{{localPolicyTemplateID}}\",\n        \"parameters\": \"{\\\"policyExceptions\\\" : {\\\"my_ro_user\\\":{\\\"schemas\\\":[{\\\"end_time\\\":\\\"1986852617410889176\\\",\\\"name\\\":\\\"testing.*\\\"},{\\\"name\\\":\\\"new_testing.*\\\"}]}},\\\"alertSeverity\\\":\\\"high\\\",\\\"block\\\":false}\",\n        \"enabled\": true,\n        \"scope\": {\n            \"repoIds\": [\n                \"abc123\"\n            ]\n        },\n        \"tags\": [\n            \"Governance\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/regopolicies/instances/{{localPolicyCategory}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"regopolicies",
+						"instances",
+						"{{localPolicyCategory}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Opaque Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/opaqueToken/tokens/{{public_key}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"opaqueToken",
+						"tokens",
+						"{{public_key}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Global Policy Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/policies/{{policyID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"policies",
+						"{{policyID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Rule to Global Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identities\": {\n        \"users\": [\n            \"cyral@domain.net\"\n        ]\n    },\n    \"hosts\" : [\n        \"1.1.1.1\"\n    ],\n    \"reads\": [\n        {\n            \"data\": [\"TITLE\"],\n            \"rows\": 5,\n            \"severity\": \"low\",\n            \"rateLimit\": 20\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/policies/{{policyID}}/rules",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"policies",
+						"{{policyID}}",
+						"rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Rule From Global Policy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/policies/{{policyID}}/rules/abcd1234",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"policies",
+						"{{policyID}}",
+						"rules",
+						"abcd1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Policy Details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"meta\": {\n        \"id\": \"abcd1234\",\n        \"name\": \"DB_Role_testing\",\n        \"version\": \"18\",\n        \"created\": \"2023-01-09T18:26:58.218800868Z\",\n        \"lastUpdated\": \"2023-01-10T16:50:21.640983919Z\",\n        \"type\": \"user-defined\",\n        \"tags\": [],\n        \"enabled\": true,\n        \"description\": \"\"\n    },\n    \"data\": [\n        \"DBROLE_TESTING\"\n    ],\n    \"rules\": [\n        {\n            \"identities\": {\n                \"users\": [\n                    \"user@domain.net\"\n                ]\n            },\n            \"reads\": [\n                {\n                    \"data\": [\n                        \"*\"\n                    ],\n                    \"rows\": 2,\n                    \"severity\": \"low\"\n                }\n            ]\n        },\n        {\n            \"identities\": {\n                \"groups\": [\n                    \"CyralAdmin\"\n                ]\n            },\n            \"reads\": [\n                {\n                    \"data\": [\n                        \"*\"\n                    ],\n                    \"rows\": 3,\n                    \"severity\": \"low\"\n                }\n            ]\n        },\n        {\n            \"identities\": {\n                \"dbRoles\": [\n                    \"admin\",\n                    \"awsuser\",\n                    \"postgres\",\n                    \"sysadmin\",\n                    \"testrole\"\n                ]\n            },\n            \"reads\": [\n                {\n                    \"data\": [\n                        \"*\"\n                    ],\n                    \"rows\": 4,\n                    \"severity\": \"low\"\n                }\n            ]\n        },\n        {\n            \"reads\": [\n                {\n                    \"data\": [\n                        \"*\"\n                    ],\n                    \"rows\": 1,\n                    \"severity\": \"low\"\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/policies/{{policyID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"policies",
+						"{{policyID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Global Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"meta\": {\n        \"name\": \"DEMO: PII Control and Rate Limit\",\n        \"version\": \"1\",\n        \"type\": \"user-defined\",\n        \"tags\": [],\n        \"enabled\": true,\n        \"description\": \"Global Policy to control access to DEMO Related PII\"\n    },\n    \"data\": [\n        \"DEMO_PII\"\n    ],\n    \"rules\": [\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/policies",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"policies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Classifier REGO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/integrations/classifiers/builtin",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"classifiers",
+						"builtin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Datamap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/datamaps",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"datamaps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recommendations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/datamap/recommendations?page=1&itemsPerPage=2000",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"datamap",
+						"recommendations"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "itemsPerPage",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Datamap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/datamap",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"datamap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Repo Datamap",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataMap\": {\n        \"labels\": {\n            \"SHARD_1_EMAIL\": {\n                \"attributes\": [\n                    \"shard_1.table.email\"\n                ],\n                \"endpoints\": []\n            },\n            \"SHARD_1_ADDRESS\": {\n                \"attributes\": [\n                    \"shard_1.table.address\"\n                ],\n                \"endpoints\": []\n            },\n            \"SHARD_N_ADDRESS\": {\n                \"attributes\": [\n                    \"shard_n.table.address\"\n                ],\n                \"endpoints\": []\n            },\n            \"SHARD_N_EMAIL\": {\n                \"attributes\": [\n                    \"shard_n.table.email\"\n                ],\n                \"endpoints\": []\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/datamap",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"datamap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Datamap",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ADDRESS\": [\n        {\n            \"repo\": \"DO-K8-MySQL\",\n            \"attributes\": [\n                \"PUBLIC.PROVIDERS.PROVIDER_STREET_ADDRESS\",\n                \"sakila.address.address\",\n                \"temp.test.test\"\n            ]\n        }\n    ],\n    \"BackUps\": [\n        {\n            \"repo\": \"S3\",\n            \"attributes\": [\n                \"backup-file-storage\"\n            ]\n        }\n    ],\n    \"CCN\": [\n        {\n            \"repo\": \"Cyral-Dev-Snowflake\",\n            \"attributes\": [\n                \"finance.cards.card_number\",\n                \"finance.not.here\"\n            ]\n        }\n    ],\n    \"K8_FIRST_NAME\": [\n        {\n            \"repo\": \"DO-K8-MySQL\",\n            \"attributes\": [\n                \"sakila.actor.first_name\"\n            ]\n        }\n    ],\n    \"K8_LAST_NAME\": [\n        {\n            \"repo\": \"DO-K8-MySQL\",\n            \"attributes\": [\n                \"sakila.actor.last_name\",\n                \"sakila.staff.last_name\"\n            ]\n        }\n    ],\n    \"LAST_NAME\": [\n        {\n            \"tags\": [\n                \"TESTING_STUFF\"\n            ]\n        },\n        {\n            \"repo\": \"Cyral-Dev-Snowflake\",\n            \"attributes\": [\n                \"public.contacts.contact_name\",\n                \"snowflake_sample_data.tcph_sf1.customer.c_name\",\n                \"snowflake_sample_data.tpch_sf1.customer.c_name\",\n                \"tcph_sf1.customer.c_name\",\n                \"tpch_sf1.customer.c_name\"\n            ]\n        }\n    ],\n    \"LogFiles\": [\n        {\n            \"repo\": \"S3\",\n            \"attributes\": [\n                \"log-file-storage.python_s3_loggger_demo.20220328145139\"\n            ]\n        }\n    ],\n    \"NAME\": [\n        {\n            \"tags\": [\n                \"testing_stuff\"\n            ]\n        },\n        {\n            \"repo\": \"Eng-Denodo\",\n            \"attributes\": [\n                \"mysql_backend.actor.last_name\"\n            ]\n        }\n    ],\n    \"PAYMENTS\": [\n        {\n            \"repo\": \"DO-K8-PG\",\n            \"attributes\": [\n                \"public.payment.amount\",\n                \"public.payment.customer_id\",\n                \"public.payment.payment_date\",\n                \"public.payment.payment_id\",\n                \"public.payment.rental_id\",\n                \"public.payment.staff_id\"\n            ]\n        }\n    ],\n    \"PG_MASK_ID\": [\n        {\n            \"repo\": \"DO-K8-PG\",\n            \"attributes\": [\n                \"public.staff.store_id\"\n            ]\n        }\n    ],\n    \"PG_MASK_NAME\": [\n        {\n            \"tags\": [\n                \"TESTING_STUFF\"\n            ]\n        },\n        {\n            \"repo\": \"DO-K8-PG\",\n            \"attributes\": [\n                \"public.actor.first_name\",\n                \"public.actor.last_name\"\n            ]\n        }\n    ],\n    \"ProtectedFiles\": [\n        {\n            \"repo\": \"S3\",\n            \"attributes\": [\n                \"local-install-files.protected\",\n                \"mapping-form-key.mapping-form-bucket\",\n                \"protected.local-install-files\"\n            ]\n        }\n    ],\n    \"ProtectedUserFiles\": [\n        {\n            \"repo\": \"S3\",\n            \"attributes\": [\n                \"local-install-files.userfiles\"\n            ]\n        }\n    ],\n    \"RATING\": [\n        {\n            \"repo\": \"DO-K8-PG\",\n            \"attributes\": [\n                \"public.film.rating\"\n            ]\n        }\n    ],\n    \"RDS_FIRST_NAME\": [\n        {\n            \"repo\": \"RDS-PSQL-Masking\",\n            \"attributes\": [\n                \"public.actor.first_name\",\n                \"public.customer.first_name\",\n                \"public.staff.first_name\"\n            ]\n        },\n        {\n            \"repo\": \"RDS-MySQL-Masking\",\n            \"attributes\": [\n                \"sakila.actor.first_name\"\n            ]\n        }\n    ],\n    \"RDS_LAST_NAME\": [\n        {\n            \"repo\": \"RDS-MySQL-Masking\",\n            \"attributes\": [\n                \"sakila.actor.last_name\",\n                \"sakila.customer.last_name\",\n                \"sakila.staff.last_name\"\n            ]\n        },\n        {\n            \"repo\": \"RDS-PSQL-Masking\",\n            \"attributes\": [\n                \"public.actor.last_name\",\n                \"public.customer.last_name\",\n                \"public.staff.last_name\"\n            ]\n        }\n    ],\n    \"RDS_MASK_EMAIL\": [\n        {\n            \"repo\": \"RDS-PSQL-Masking\",\n            \"attributes\": [\n                \"public.customer.email\",\n                \"public.staff.email\"\n            ]\n        }\n    ],\n    \"RDS_MASK_PAYMENT\": [\n        {\n            \"repo\": \"RDS-PSQL-Masking\",\n            \"attributes\": [\n                \"public.payment.amount\"\n            ]\n        }\n    ],\n    \"RDS_MASK_TEXT\": [\n        {\n            \"repo\": \"RDS-PSQL-Masking\",\n            \"attributes\": [\n                \"public.file.description\"\n            ]\n        }\n    ],\n    \"REDSHIFT_EMAIL\": [\n        {\n            \"repo\": \"AWS-RedShift\",\n            \"attributes\": [\n                \"public.users.email\"\n            ]\n        }\n    ],\n    \"REDSHIFT_NAME\": [\n        {\n            \"repo\": \"AWS-RedShift\",\n            \"attributes\": [\n                \"public.users.firstname\",\n                \"public.users.lastname\",\n                \"public.users.username\"\n            ]\n        }\n    ],\n    \"TEST_MASKING\": [\n        {\n            \"repo\": \"Cyral-Dev-Snowflake\",\n            \"attributes\": [\n                \"public.contacts.contact_id\",\n                \"snowflake_sample_data.tcph_sf1.customer.c_custkey\",\n                \"snowflake_sample_data.tpch_sf1.customer.c_custkey\",\n                \"tcph_sf1.customer.c_custkey\",\n                \"tpch_sf1.customer.c_custkey\"\n            ]\n        }\n    ],\n    \"TUTORIAL_TEST\": [\n        {\n            \"repo\": \"RDS-oracle-perf\",\n            \"attributes\": [\n                \"admin.insert_tutorials.not_here\"\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/datamaps",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"datamaps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sidecars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v2/sidecars/sidecarId",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v2",
+						"sidecars",
+						"sidecarId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ELK Integration Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}{{cp_port}}/v1/integrations/elk/{{integration_id}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"elk",
+						"{{integration_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update ELK Integration Details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Scott-ELK\",\n    \"esUrl\": \"https://elk_stack.no-here-0.es.amazonaws.com/\",\n    \"kibanaUrl\": \"https://elk_stack.no-here-0.es.amazonaws.com/_plugin/kibana/\",\n    \"esUid\": \"admin\",\n    \"esPwd\": \"EXXQ81trRCFD75W9UuRk!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}{{cp_port}}/v1/integrations/elk/{{integration_id}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"elk",
+						"{{integration_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ELK Integrations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/integrations/elk",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"elk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Sidecars Details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"poc-testing-sidecar\",\n    \"endpoint\": \"\",\n    \"userEndpoint\": \"\",\n    \"services\": {\n        \"alerter\": null,\n        \"authenticator\": null,\n        \"bigquery-analyzer\": null,\n        \"bigquery-wire\": null,\n        \"cassandra-analyzer\": null,\n        \"cassandra-wire\": null,\n        \"certificate-manager\": null,\n        \"dispatcher\": {\n            \"bypass\": \"failover\"\n        },\n        \"dremio-analyzer\": null,\n        \"dremio-wire\": null,\n        \"dynamodb-wire\": null,\n        \"forward-proxy\": null,\n        \"mongodb-wire\": null,\n        \"mysql-analyzer\": null,\n        \"mysql-wire\": null,\n        \"oracle-wire\": {\n            \"command-queue-size\": \"10\",\n            \"command-queue-timeout-ms\": \"200\"\n        },\n        \"pg-analyzer\": null,\n        \"pg-wire\": {\n            \"memory-budget-enabled\": \"false\",\n            \"memory-budget-per-connection\": \"8388608\",\n            \"memory-budget-request-factor\": \"512\",\n            \"memory-budget-response-factor\": \"2\"\n        },\n        \"push-client\": null,\n        \"rest-wire\": null,\n        \"s3-wire\": null,\n        \"snowflake-analyzer\": null,\n        \"snowflake-wire\": null,\n        \"sqlserver-wire\": null\n    },\n    \"cloud\": \"\",\n    \"labels\": null,\n    \"properties\": {\n        \"deploymentMethod\": \"linux\"\n    },\n    \"certificateBundleSecrets\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sidecars Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sidecars Repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}/repos",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sidecars Repos Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}/repos/{{repoID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}",
+						"repos",
+						"{{repoID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Sidecars Repos Details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isSelectedIdentityProviderSidecar\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}/repos/{{repoID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}",
+						"repos",
+						"{{repoID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Repo to Sidecar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"enabled\": true,\n    \"listener\": {\n        \"file\": \"\",\n        \"host\": \"0.0.0.0\",\n        \"port\": 3307\n    },\n    \"tcpListeners\": {\n        \"listeners\": null\n    },\n    \"isSelectedIdentityProviderSidecar\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}/repos/{{repoID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}",
+						"repos",
+						"{{repoID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Repo From Sidecar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"enabled\": true,\n    \"listener\": {\n        \"file\": \"\",\n        \"host\": \"0.0.0.0\",\n        \"port\": 1522\n    },\n    \"tcpListeners\": {\n        \"listeners\": null\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}/repos/{{repoID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}",
+						"repos",
+						"{{repoID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Logging Level on Sidecar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"services\": {\n        \"s3-wire\": {\n            \"log-level\": \"info\"\n        },\n        \"dispatcher\": {\n            \"log-level\": \"info\"\n        },\n        \"authenticator\" :{\n            \"log-level\": \"info\"\n        },\n        \"nginx-proxy\": {\n            \"log-level\":\"info\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars/{{sidecarID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars",
+						"{{sidecarID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Repo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Repo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"connParams\": {\n        \"connDraining\": {\n            \"auto\": true,\n            \"waitTime\": 0\n        }\n    },\n    \"labels\": [],\n    \"name\": \"testing-pg-sql\",\n    \"type\": \"postgresql\",\n    \"repoNodes\": [\n    {\n      \"dynamic\": false,\n      \"host\": \"backend.host.local\",\n      \"name\": \"testing-pg-sql\",\n      \"port\": 5432\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Identity Map",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/identityMaps",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"identityMaps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}{{cp_port}}/v1/users/roles",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/repoAccounts/",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"repoAccounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo User Accounts v3.x",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"predicates\": [\n        {\n            \"field\": \"userAccountList.name\",\n            \"relOp\": \"strEq\",\n            \"stringVal\": \"admin\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/userAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"userAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Access Rules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/userAccounts/{{UserAccountID}}/accessRules",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"userAccounts",
+						"{{UserAccountID}}",
+						"accessRules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Repo Access Rule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accessRules\": [\n        {\n            \"identity\": {\n                \"type\": \"group\",\n                \"name\": \"CyralAdmin\"\n            },\n            \"validFrom\": \"2022-10-20T12:07:49.936Z\",\n            \"validUntil\": null,\n            \"config\": {\n                \"authorizationPolicyInstanceIDs\": []\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/userAccounts/{{UserAccountID}}/accessRules",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"userAccounts",
+						"{{UserAccountID}}",
+						"accessRules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Recommendation Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"DISMISSED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/datamap/recommendations/{{recommendationId}}/status",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"datamap",
+						"recommendations",
+						"{{recommendationId}}",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Repo Recommendation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"attribute\": \"data.transactions.card_number\",\n  \"label\": \"CCN\",\n  \"source\": \"telesales\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/datamap/recommendations",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"datamap",
+						"recommendations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Repo User Accounts v3.x",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"admin\",\n    \"authDatabaseName\": \"\",\n    \"authScheme\": {\n        \"awsSecretsManager\": {\n            \"secretARN\": \"arn:aws:secretsmanager:no-here-0:111111111111:secret:/cyral/dbsecrets/admin-GXZ0qD\"\n        }\n    },\n    \"config\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/userAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"userAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Service Accounts v3.x",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/serviceAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"serviceAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Repo Service Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"connectionDriverInstanceIDs\": [\n    \"{{IntegrationID}}\"\n  ],\n  \"description\": \"User Associated With Our Test MySQL Application\",\n  \"fetchGroups\": true,\n  \"name\": \"app_user_1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/serviceAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"serviceAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Connection Driver to User Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/userAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"userAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Service Accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/users/serviceAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"serviceAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sidecar Accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/users/sidecarAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"sidecarAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sidecar Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sidecarId\": \"{{sidecarID}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}{{cp_port}}/v1/users/sidecarAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"sidecarAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Repo Accounts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cyralStorage\": {\n        \"repoAccount\": \"aptible\",\n        \"password\": \"password\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/repoAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"repoAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Repo Access Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"repoID\": \"{{repoID}}\",\n    \"userAccountID\": \"{{repoAccountID}}\",\n    \"identity\": {\n      \"type\": \"email\",\n      \"name\": \"cyral@domain.net\"\n    },\n    \"validFrom\": \"2022-09-18T20:45:00Z\",\n    \"validUntil\": \"2023-10-18T20:50:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/approvals",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"approvals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Repo Access Requests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/approvals/search",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"approvals",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Manage Repo Access Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"approvalAction\": \"GRANT\",\n  \"comments\": \"granting a request\",\n  \"modCounter\": 0,\n  \"actor\": {\n    \"type\": \"email\",\n    \"name\": \"user@domain.net\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/approvals/{{approvalID}}/manage",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"approvals",
+						"{{approvalID}}",
+						"manage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Sidecar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testing-live\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/sidecars",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"sidecars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Service Account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"roleIds\": [\n        \"call-jenny-8675309\",\n        \"abcd-12345-f46a618c6f97\"\n    ],\n    \"displayName\": \"Can View and Modify Repos and Sidecars\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/users/serviceAccounts",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"serviceAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create JWT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/users/oidc/token",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"oidc",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Conf Analysis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/conf/analysis",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"conf",
+						"analysis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Conf Auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/conf/auth",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"conf",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Integration Templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/integrations/confExtensions/templates",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"confExtensions",
+						"templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Connection Driver Templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/integrations/confExtensions/templates/connectionDriver",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"confExtensions",
+						"templates",
+						"connectionDriver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Custom Connection Driver",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"MySQLTesting\",\n    \"category\": \"builtin\",\n    \"parameters\": \"{\\\"applicationName\\\":\\\"My SQL Test Application\\\"}\",\n    \"purpose\": \"connectionDriver\",\n    \"templateType\": \"cyralContext\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/integrations/confExtensions/instances",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"confExtensions",
+						"instances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Defined Integrations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"PGCyralContextTesting\",\n    \"category\": \"builtin\",\n    \"purpose\": \"connectionDriver\",\n    \"templateType\": \"cyralContext\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/integrations/confExtensions/instances",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"confExtensions",
+						"instances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Integrations of Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/integrations/confExtensions/instances/{{IntegrationPurpose}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"integrations",
+						"confExtensions",
+						"instances",
+						"{{IntegrationPurpose}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Repo Conf Analysis",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"redact\": \"all\",\n        \"tagSensitiveData\": false,\n        \"ignoreIdentifierCase\": false,\n        \"analyzeWhereClause\": false,\n        \"alertOnViolation\": true,\n        \"disablePreConfiguredAlerts\": false,\n        \"blockOnViolation\": false,\n        \"disableFilterAnalysis\": false,\n        \"rewriteOnViolation\": false,\n        \"logGroups\": [\n            \"everything\"\n        ],\n        \"enableDataMasking\": true\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/conf/analysis",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"conf",
+						"analysis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Repo Conf Auth",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identityProvider\": \"saml.abcd-12345\",\n    \"allowNativeAuth\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/repos/{{repoID}}/conf/auth",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"conf",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Repo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"redact\": \"all\",\n        \"tagSensitiveData\": false,\n        \"ignoreIdentifierCase\": false,\n        \"analyzeWhereClause\": false,\n        \"alertOnViolation\": true,\n        \"disablePreConfiguredAlerts\": false,\n        \"blockOnViolation\": false,\n        \"disableFilterAnalysis\": false,\n        \"rewriteOnViolation\": false,\n        \"logGroups\": [\n            \"everything\"\n        ],\n        \"enableDataMasking\": true\n    }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}{{cp_port}}/v1/repos/{{repoID}}/conf/analysis",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"repos",
+						"{{repoID}}",
+						"conf",
+						"analysis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo Template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/templates/config/repo",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"templates",
+						"config",
+						"repo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/users/users/search?userName=cyral_user@2016.adfs.cyral.local",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "cyral_user@2016.adfs.cyral.local"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/users/users",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"users",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Datalabels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/datalabels",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"datalabels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Datalabel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"TEST_CNID\",\n    \"description\": \"Social security number\",\n    \"type\": \"CUSTOM\",\n    \"classificationRule\": {\n        \"ruleType\": \"REGO\",\n        \"ruleCode\": \"package classifier_cnid  output := {k: v |     v := classify(k, input[k]) }  classify(key, val) = \\\"TEST_CNID\\\" {         any([re_match(`(?:[1-9]\\\\d{5})(?:(?:1[89]\\\\d{2}|2\\\\d{3})(?:0[1-9]|1[012])(?:0[1-9]|[12][0-9]|3[01]))\\\\d{2}(?:\\\\d)(?:[0-9xX])`, val)]) } else = \\\"UNLABELED\\\" {         true }\",\n        \"status\": \"ENABLED\"\n    },\n    \"tags\": [],\n    \"implicit\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/datalabels/{{dataLabel}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"datalabels",
+						"{{dataLabel}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Datalabel With Rego",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{dataLabel}}\",\n    \"description\": \"Test label used for testing\",\n    \"type\": \"CUSTOM\",\n    \"tags\": [],\n    \"classificationRule\": {\n        \"ruleType\": \"REGO\",\n        \"ruleCode\": \"package classifier\\n\\noutput := {k: v |\\n    v := classify(k, input[k])\\n}\\n\\nclassify(key, val) = \\\"TEST\\\" {\\n        any([lower(key) == \\\"state\\\",\\n              re_match(`\\\\A.*testing.*\\\\z`, lower(key)),\\n              lower(key) == \\\"zip\\\",\\n              lower(key) == \\\"zipcode\\\",\\n              re_match(`\\\\Astreet.*\\\\z`, lower(key))])\\n} else = \\\"UNLABELED\\\" {\\n        true\\n}\\n\",\n        \"status\": \"ENABLED\"\n    },\n    \"implicit\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}:{{cp_port}}/v1/datalabels/{{dataLabel}}",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"datalabels",
+						"{{dataLabel}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Repo Template",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"repoOwner\": \"cyralinc\",\n    \"repoName\": \"sidecar-templates\",\n    \"repoReference\": \"v2.17.4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{customer_app_url}}{{cp_port}}/v1/templates/config/repo",
+					"protocol": "https",
+					"host": [
+						"{{customer_app_url}}"
+					],
+					"port": "{{cp_port}}",
+					"path": [
+						"v1",
+						"templates",
+						"config",
+						"repo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{currentAccessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const echoPostRequest = {",
+					"  url: \"https://\" + pm.collectionVariables.get('customer_app_url') + \":\" + pm.collectionVariables.get('cp_port') + \"/v1/users/oidc/token\",",
+					"  method: 'POST',",
+					"  header: 'Content-Type:application/x-www-form-urlencoded',",
+					"  body: {",
+					"    mode: 'urlencoded',",
+					"    urlencoded: [",
+					"        \t{key: \"client_id\", value: pm.collectionVariables.get('clientId')},",
+					"        \t{key: \"client_secret\", value: pm.collectionVariables.get('clientSecret')},",
+					"        \t{key: \"grant_type\", value:\"client_credentials\"}",
+					"    ]",
+					"  }",
+					"};",
+					"",
+					"var getToken = true;",
+					"",
+					"/*if (!pm.collectionVariables.get('accessTokenExpiry') || ",
+					"    !pm.collectionVariables.get('currentAccessToken')) {",
+					"    console.log('Token or expiry date are missing')",
+					"} else if (pm.collectionVariables.get('accessTokenExpiry') <= (new Date()).getTime()) {",
+					"    console.log('Token is expired')",
+					"} else {",
+					"    getToken = false;",
+					"    console.log('Token and expiry date are all good');",
+					"}*/",
+					"",
+					"if (getToken === true) {",
+					"    pm.sendRequest(echoPostRequest, function (err, res) {",
+					"    console.log(err ? err : res.json());",
+					"        if (err === null) {",
+					"            console.log('Saving the token and expiry date')",
+					"            var responseJson = res.json();",
+					"            pm.collectionVariables.set('currentAccessToken', responseJson.access_token)",
+					"    ",
+					"            var expiryDate = new Date();",
+					"            expiryDate.setSeconds(expiryDate.getSeconds() + responseJson.expires_in);",
+					"            pm.collectionVariables.set('accessTokenExpiry', expiryDate.getTime());",
+					"        }",
+					"    });",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "customer_app_url",
+			"value": "mycp.app.cyral.com"
+		},
+		{
+			"key": "cp_port",
+			"value": "443",
+			"type": "string"
+		},
+		{
+			"key": "repoID",
+			"value": "some_repo_id"
+		},
+		{
+			"key": "cp_api_version",
+			"value": "v1",
+			"type": "string"
+		},
+		{
+			"key": "sidecarID",
+			"value": "some_sidecar_id"
+		},
+		{
+			"key": "policyID",
+			"value": "some_policy_id",
+			"type": "string"
+		},
+		{
+			"key": "integration_id",
+			"value": "***",
+			"type": "string"
+		},
+		{
+			"key": "clientId",
+			"value": "no/default/xyz789",
+			"type": "string"
+		},
+		{
+			"key": "clientSecret",
+			"value": "your_client_secret",
+			"type": "string"
+		},
+		{
+			"key": "currentAccessToken",
+			"value": "nothing_yet",
+			"type": "string"
+		},
+		{
+			"key": "accessTokenExpiry",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "public_key",
+			"value": "some_public_key",
+			"type": "string"
+		},
+		{
+			"key": "repoAccountID",
+			"value": "some_repo_account_id",
+			"type": "string"
+		},
+		{
+			"key": "approvalID",
+			"value": "some_approval_id",
+			"type": "string"
+		},
+		{
+			"key": "IntegrationPurpose",
+			"value": "connectionDriver"
+		},
+		{
+			"key": "IntegrationID",
+			"value": "some_integration_id"
+		},
+		{
+			"key": "serviceAccountID",
+			"value": "some_service_account_id"
+		},
+		{
+			"key": "UserAccountID",
+			"value": "some_repo_account_id",
+			"type": "string"
+		},
+		{
+			"key": "recommendationId",
+			"value": "some_recommendation_id",
+			"type": "string"
+		},
+		{
+			"key": "dataLabel",
+			"value": "ADDRESS",
+			"type": "string"
+		},
+		{
+			"key": "localPolicyCategory",
+			"value": "SECURITY",
+			"type": "string"
+		},
+		{
+			"key": "localPolicyID",
+			"value": "some_local_policy_id",
+			"type": "string"
+		},
+		{
+			"key": "localPolicyTemplateID",
+			"value": "read-limit",
+			"type": "string"
+		},
+		{
+			"key": "CP",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
