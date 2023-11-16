@@ -42,7 +42,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           operation: 'update'
-          classpath: 'POCs/liquidbase/changelogs'
+          classpath: 'liquibaseChangelog'
           changeLogFile: 'changelog.sql'
           username: ${{ secrets.LIQUID_PG_USER }}
           password: ${{ secrets.LIQUID_PG_PASS }}
