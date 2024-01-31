@@ -1,3 +1,22 @@
+
+terraform {
+  required_providers {
+    cyral = {
+      source  = "cyralinc/cyral"
+      version = "~> 4.0"
+    }
+  }
+}
+
+## Setup connection to the control plane
+
+provider "cyral" {
+  client_id     = ""
+  client_secret = ""
+
+  control_plane = ""
+}
+
 locals {
   no_code_data_labels = toset(compact((split("\n", file("./resource_files/no_code_data_labels.txt")))))
 }
@@ -7,14 +26,14 @@ locals {
 }
 
 
-resource "cyral_datalabel" "data_labels" {
-  for_each = local.no_code_data_labels
-  name     = each.key
-  classification_rule {
-    rule_status = "DISABLED"
-    rule_type   = "UNKNOWN"
-  }
-}
+#resource "cyral_datalabel" "data_labels" {
+#  for_each = local.no_code_data_labels
+#  name     = each.key
+#  classification_rule {
+#    rule_status = "DISABLED"
+#    rule_type   = "UNKNOWN"
+#  }
+#}
 
 resource "cyral_datalabel" "data_labels_with_code" {
   for_each = local.data_labels_json

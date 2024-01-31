@@ -20,6 +20,9 @@ test_phone_key {
     output.PhoneNumber == "PHONE" with input as {"PhoneNumber":"some number"}
 }
 
+
+# standard US patterns
+
 test_phone_pattern {
     output.message == "PHONE" with input as {"message":"+1-(800)-123-4567"}
 }
@@ -38,4 +41,19 @@ test_phone_pattern {
 
 test_phone_pattern {
     output.message == "PHONE" with input as {"message":"123 456 7890"}
+}
+
+
+# South Africa specific tests
+
+test_phone_valid_with_country_code {
+    output.message == "PHONE" with input as {"message": "0027 12 456 7890"}
+}
+
+test_phone_valid_with_plus_sign {
+    output.message == "PHONE" with input as {"message": "+27 11 123 4567"}
+}
+
+test_phone_valid_mobile {
+    output.message == "PHONE" with input as {"message": "+27791234567"}
 }
