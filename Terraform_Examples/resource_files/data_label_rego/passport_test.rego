@@ -63,7 +63,10 @@ test_passport_pattern {
     output.message == "PASSPORT" with input as {"message":"E12345678"}
 }
 
-
+# South Africa (diplomat, standard covered by other countries)
+test_passport_sa_pattern {
+    output.message == "PASSPORT" with input as {"message":"D123456789"}
+}
 
 
 

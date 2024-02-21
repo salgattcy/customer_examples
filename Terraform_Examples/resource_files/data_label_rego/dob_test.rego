@@ -20,6 +20,26 @@ test_dob_key {
     output.BirthDate == "DOB" with input as {"BirthDate":"test"}
 }
 
+# mm/dd/yyyy
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"01/01/1900"}
+}
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"1-1-1900"}
+}
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"10.01.1971"}
+}
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"11/30/2023"}
+}
+
+# dd/mm/yyyy
+
 test_dob_pattern {
     output.message == "DOB" with input as {"message":"01/01/1900"}
 }
@@ -33,5 +53,24 @@ test_dob_pattern {
 }
 
 test_dob_pattern {
-    output.message == "DOB" with input as {"message":"11/30/2023"}
+    output.message == "DOB" with input as {"message":"30/11/2023"}
+}
+
+
+# yyyy/mm/dd
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"1900/01/10"}
+}
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"1900/1/1"}
+}
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"1971/10/01"}
+}
+
+test_dob_pattern {
+    output.message == "DOB" with input as {"message":"2023/12/31"}
 }

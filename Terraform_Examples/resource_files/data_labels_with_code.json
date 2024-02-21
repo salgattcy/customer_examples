@@ -5,22 +5,39 @@
         "rule_code_file":"./resource_files/data_label_rego/address.rego",
         "rule_status":"ENABLED"
     },
-    "test_cnid" : {
-        "name":"TEST_CNID",
-        "description":"Social security number",
-        "rule_code_file":"./resource_files/data_label_rego/test_cnid.rego",
-        "rule_status":"ENABLED"
-    },
     "age" : {
         "name":"AGE",
         "description":"Age",
         "rule_code_file":"./resource_files/data_label_rego/age.rego",
         "rule_status":"ENABLED"
     },
+    "card_expiration" : {
+        "name":"CARD_EXPIRATION",
+        "description":"Credit card expiration",
+        "rule_code_file":"./resource_files/data_label_rego/card_expiration.rego",
+        "rule_status":"ENABLED"
+    },
+    "cardholder_name" : {
+        "name":"CARDHOLDER_NAME",
+        "description":"Credit card holder name",
+        "rule_code_file":"./resource_files/data_label_rego/cardholder_name.rego",
+        "rule_status":"ENABLED"
+    },
     "ccn" : {
         "name":"CCN",
         "description":"Credit card number",
         "rule_code_file":"./resource_files/data_label_rego/ccn.rego",
+        "rule_status":"ENABLED"
+    },"cvv" : {
+        "name":"CVV",
+        "description":"Credit card CVV",
+        "rule_code_file":"./resource_files/data_label_rego/cvv.rego",
+        "rule_status":"ENABLED"
+    },
+    "dob" : {
+        "name":"DOB",
+        "description":"date of birth",
+        "rule_code_file":"./resource_files/data_label_rego/dob.rego",
         "rule_status":"ENABLED"
     },
     "email" : {
@@ -29,10 +46,40 @@
         "rule_code_file":"./resource_files/data_label_rego/email.rego",
         "rule_status":"ENABLED"
     },
+    "first_name" : {
+        "name":"FIRST_NAME",
+        "description":"First name",
+        "rule_code_file":"./resource_files/data_label_rego/first_name.rego",
+        "rule_status":"ENABLED"
+    },
+    "full_name" : {
+        "name":"FULL_NAME",
+        "description":"Full name",
+        "rule_code_file":"./resource_files/data_label_rego/full_name.rego",
+        "rule_status":"ENABLED"
+    },
+    "imei" : {
+        "name":"IMEI",
+        "description":"IMEI number",
+        "rule_code_file":"./resource_files/data_label_rego/imei.rego",
+        "rule_status":"ENABLED"
+    },
     "ip_address" : {
         "name":"IP_ADDRESS",
         "description":"IP Address",
         "rule_code_file":"./resource_files/data_label_rego/ip_address.rego",
+        "rule_status":"ENABLED"
+    },
+    "last_name" : {
+        "name":"LAST_NAME",
+        "description":"Last name",
+        "rule_code_file":"./resource_files/data_label_rego/last_name.rego",
+        "rule_status":"ENABLED"
+    },
+    "passport" : {
+        "name":"PASSPORT",
+        "description":"Passport",
+        "rule_code_file":"./resource_files/data_label_rego/passport.rego",
         "rule_status":"ENABLED"
     },
     "phone" : {
@@ -41,10 +88,22 @@
         "rule_code_file":"./resource_files/data_label_rego/phone.rego",
         "rule_status":"ENABLED"
     },
+    "puk" : {
+        "name":"PUK",
+        "description":"PUK number",
+        "rule_code_file":"./resource_files/data_label_rego/puk_number.rego",
+        "rule_status":"ENABLED"
+    },
     "ssn" : {
         "name":"SSN",
         "description":"Social security number",
         "rule_code_file":"./resource_files/data_label_rego/ssn.rego",
+        "rule_status":"ENABLED"
+    },
+    "surname" : {
+        "name":"SURNAME",
+        "description":"Surname",
+        "rule_code_file":"./resource_files/data_label_rego/surname.rego",
         "rule_status":"ENABLED"
     }
 }
